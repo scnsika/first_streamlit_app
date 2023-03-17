@@ -25,3 +25,6 @@ streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
 # Display the table on the page.
 streamlit.dataframe(my_fruit_list)
+
+# Nous souhaitons réaliser un filytre sur la liste des fruits et ne proposer que les fruits le splus populaires 
+streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
