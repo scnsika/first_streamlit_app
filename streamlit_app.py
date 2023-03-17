@@ -27,11 +27,6 @@ streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 streamlit.dataframe(my_fruit_list)
 
 # -----------------------------------------------------------------------------------------------------------
-# Nous souhaitons réaliser un filtre sur la liste des fruits et ne proposer que les fruits le splus populaires 
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
-
-
-# -----------------------------------------------------------------------------------------------------------
 # Nous allons rendre le tableau plus intélligent 
 # de façon à ce qu'il ne filtre que sur les fruits qui sont de;qnés (selectionnés)
 # pour se faire : We'll ask our app to put the list of selected fruits into a variable called fruits_selected. 
@@ -39,11 +34,14 @@ streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado',
 # (and assign that data to a variable called fruits_to_show).
 # Finally, we'll ask the app to use the data in fruits_to_show in the dataframe it displays on the page. 
 
-
 # let:s put a pick lidt here so they can pick the fruit they want to include
 
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
+
+# Display the table on the page.
+streamlit.dataframe(my_fruit_list)
+
 
 
 
